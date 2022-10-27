@@ -13,7 +13,8 @@ const Coins = () => {
   const [page, setPage] = useState(1);
   const [currency, setCurrency] = useState("eur");
 
-  const currencySymbol = currency === "eur" ? "€" : "$";
+  const currencySymbol =
+    currency === "eur" ? "€" : currency === "usd" ? "$" : "৳";
 
   const changePage = (page) => {
     setPage(page);
@@ -50,6 +51,7 @@ const Coins = () => {
             <HStack spacing={"4"}>
               <Radio value={"eur"}>EUR</Radio>
               <Radio value={"usd"}>USD</Radio>
+              <Radio value={"bdt"}>BDT</Radio>
             </HStack>
           </RadioGroup>
 
